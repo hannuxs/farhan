@@ -1,5 +1,10 @@
 <?php
 require_once('../config/reg.php');
+
+if(isset($_SESSION['error'])){
+	$error = $_SESSION['error'];
+}
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -26,8 +31,12 @@ require_once('../config/reg.php');
 					<div class="login-wrap py-5">
 		      	<div class="img d-flex align-items-center justify-content-center" style="background-image: url(images/arsip.png);"></div>
 		      	<h3 class="text-center mb-0">Selamat Datang</h3>
-		      	<p class="text-center">Silahkan isi sesuai data diri anda</p>
-				<p class="text-center alert-success">Silahkan isi sesuai data diri anda</p>
+		      	<p class="text-center"><?php if(!isset($error)){
+					echo "Silahkan isi sesuai data diri anda</p>";
+				}else{
+					echo "</p><p class='text-center alert-warning text-danger'>Errorr boss!!!</p>";
+				}
+					?>
 						<form action="" class="login-form" method="post">
 		      		<div class="form-group">
 		      			<div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-user"></span></div>

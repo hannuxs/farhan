@@ -16,7 +16,5 @@ if(isset($_POST['daftar'])){
         $query = "insert into pengguna (nip, nama, tgl_lahir, email, pw) values('$nip', '$nama', '$tgl_lahir', '$email', '$pw')";
         $masuk = mysqli_query($koneksi, $query);
     }
-}else {
-    echo "erorr";
 }
 ?>
