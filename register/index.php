@@ -1,3 +1,6 @@
+<?php
+require_once('../config/reg.php');
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -24,33 +27,34 @@
 		      	<div class="img d-flex align-items-center justify-content-center" style="background-image: url(images/arsip.png);"></div>
 		      	<h3 class="text-center mb-0">Selamat Datang</h3>
 		      	<p class="text-center">Silahkan isi sesuai data diri anda</p>
-						<form action="#" class="login-form">
+				<p class="text-center alert-success">Silahkan isi sesuai data diri anda</p>
+						<form action="" class="login-form" method="post">
 		      		<div class="form-group">
 		      			<div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-user"></span></div>
-		      			<input type="text" class="form-control" placeholder="NIP" required>
+		      			<input type="text" class="form-control" placeholder="NIP" name="nip" required>
 		      		</div>
 					  <div class="form-group">
 						<div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-user-circle"></span></div>
-						<input type="text" class="form-control" placeholder="Nama Lengkap" required>
+						<input type="text" class="form-control" placeholder="Nama Lengkap" name="nama" required>
 					</div>
 					<div class="form-group">
 						<div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-calendar"></span></div>
-						<input type="text" class="form-control" placeholder="Tanggal Lahir" required>
+						<input type="text" class="form-control" placeholder="Tanggal Lahir" name="tgl_lahir" required>
 					</div>
 					<div class="form-group">
 						<div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-envelope"></span></div>
-						<input type="text" class="form-control" placeholder="Email Akif" required>
+						<input type="text" class="form-control" placeholder="Email Akif" name="email" required>
 					</div>
 					<div class="form-group">
 						<div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-lock"></span></div>
-					<input type="password" class="form-control" placeholder="Buat Password" required>
+					<input type="password" class="form-control" placeholder="Buat Password" name="pw" required>
 					</div>
 					<div class="form-group">
 						<div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-lock"></span></div>
-					<input type="password" class="form-control" placeholder="Tulis Ulang Password" required>
+					<input type="password" class="form-control" placeholder="Tulis Ulang Password" name="pw2" required>
 					</div>
 	            <div class="form-group">
-	            	<button type="submit" class="btn form-control btn-primary rounded submit px-3">Submit</button>
+	            	<button type="submit" class="btn form-control btn-primary rounded submit px-3" name="daftar">Submit</button>
 	            </div>
 	          </form>
 	          <div class="w-100 text-center mt-4 text">

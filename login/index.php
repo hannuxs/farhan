@@ -1,3 +1,6 @@
+<?php
+include('/config/conf.php');
+?>
 <!doctype html>
 <html lang="en">
   <head>
