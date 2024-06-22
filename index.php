@@ -1,4 +1,10 @@
 <?php
-echo "disini kita buat pemisah antara sudh login atau belum, 
-    logika sederhana --> jika terdeteksi belum login maka akan ke halaman login/register, jika tidak maka akan ke halaman dashboard";
+session_destroy();
+require_once('config/reg.php');
+
+if(!isset($_SESSION['login1'])){
+    header("location: login");
+}else{
+    header("location: dashboard");
+}
 ?>

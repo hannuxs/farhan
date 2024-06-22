@@ -54,13 +54,18 @@ if(isset($_POST['masuk'])){
     if(mysqli_num_rows($hasil) > 0){
         $data = mysqli_fetch_assoc($hasil);
         if(decrypt($data['pw']) === $pass) { // Decrypt the password and check
-            $_SESSION['login'] = $data['nama'];
-            header("location: dashboard.php");
+            $_SESSION['login1'] = $data['nama'];
+            header("location: ../index.php");
         } else {
             $_SESSION['error-masuk'] = "NIP atau Password Salah";
         }
     } else {
         $_SESSION['error-masuk'] = "NIP atau Password Salah";
     }
+}
+
+if(isset($_POST['keluar'])){
+    session_destroy();
+    header("location: ../index.php");
 }
 ?>
