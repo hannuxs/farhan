@@ -9,8 +9,8 @@ if(isset($_SESSION['error'])){
 <!doctype html>
 <html lang="en">
   <head>
-  	<title>Login</title>
-	<link rel="icon" href="../login/images/bg.png" type="image/x-icon" />
+  	<title>Daftar</title>
+	<link rel="icon" href="../images/bg.png" type="image/x-icon" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -18,7 +18,7 @@ if(isset($_SESSION['error'])){
 
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="../css/style.css">
 
 	</head>
 	<body>
@@ -29,18 +29,25 @@ if(isset($_SESSION['error'])){
 			<div class="row justify-content-center">
 				<div class="col-md-6 col-lg-4">
 					<div class="login-wrap py-5">
-		      	<div class="img d-flex align-items-center justify-content-center" style="background-image: url(images/arsip.png);"></div>
+		      	<div class="img d-flex align-items-center justify-content-csenter" style="background-image: url(../images/arsip.png);"></div>
 		      	<h3 class="text-center mb-0">Selamat Datang</h3>
-		      	<p class="text-center"><?php if(!isset($error)){
-					echo "Silahkan isi sesuai data diri anda</p>";
-				}else{
-					echo "</p><p class='text-center alert-warning text-danger'>Errorr boss!!!</p>";
-				}
-					?>
-						<form action="" class="login-form" method="post">
+		      	<p class="text-center">Silahkan isi sesuai data diri anda</p>
+				<?php if(isset($_SESSION['login'])){
+					$login = $_SESSION['login'];
+					session_destroy();
+					echo "<p class='text-center alert alert-success text-success'>$login<a href='../login'><b>Masuk</b></a></p>";}?>
+				<?php if(isset($_SESSION['error'])){
+					$error = $_SESSION['error'];
+					session_destroy();
+					echo "<p class='text-center alert alert-warning text-warning'>$error</p>";}?>
+				<?php if(isset($_SESSION['error2'])){
+					$error2 = $_SESSION['error2'];
+					session_destroy();
+					echo "<p class='text-center alert alert-danger text-danger'>$error2</p>";}?>
+				<form action="" class="login-form" method="post">
 		      		<div class="form-group">
 		      			<div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-user"></span></div>
-		      			<input type="text" class="form-control" placeholder="NIP" name="nip" required>
+		      			<input type="number" class="form-control" placeholder="NIP" name="nip" required>
 		      		</div>
 					  <div class="form-group">
 						<div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-user-circle"></span></div>
@@ -76,10 +83,10 @@ if(isset($_SESSION['error'])){
 		</div>
 	</section>
 
-	<script src="js/jquery.min.js"></script>
-  <script src="js/popper.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/main.js"></script>
+	<script src="../js/jquery.min.js"></script>
+  <script src="../js/popper.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <script src="../js/main.js"></script>
 
 	</body>
 </html>

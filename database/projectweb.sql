@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 03, 2024 at 02:26 PM
+-- Generation Time: Jun 22, 2024 at 05:21 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `pengguna` (
-  `nip` int(255) NOT NULL,
+  `nip` varchar(255) NOT NULL,
   `nama` varchar(255) NOT NULL,
   `tgl_lahir` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
@@ -40,7 +40,8 @@ CREATE TABLE `pengguna` (
 --
 
 INSERT INTO `pengguna` (`nip`, `nama`, `tgl_lahir`, `email`, `pw`) VALUES
-(123, 'ahmad farhan', '23-01-2005', 'aaa@aa', 'aaa');
+('123', 'aaa', 'aaa', 'aaa', 'dVlYQUE2YitQOXVwdkZpc1B0Q0ptQT09Ojpfokac4ZznJAOYeQtKp2Qg'),
+('admin', 'admin', 'admin', 'admin', 'L3U2ZXlaS05GWE1ZcFlSWjVQNkpndz09Ojoct6fiq4htm1pYUgLNcWkt');
 
 --
 -- Indexes for dumped tables
